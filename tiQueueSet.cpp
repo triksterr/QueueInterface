@@ -7,4 +7,3 @@ tiQueueSet *tiQueueSet::getInstance()
 	return &instance;
 }
 
-

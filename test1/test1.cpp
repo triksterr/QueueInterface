@@ -5,12 +5,10 @@
 
 #include <__msvc_ostream.hpp>
 
-
 #include "tiQueueSet.hpp"
 #include "tiQueue.hpp"
 
 using namespace std;
-
 
 tiQueue::tiQueue(): tiQueue("Noname") {}
 	
@@ -42,7 +40,6 @@ void tiQueue::print() const
 		return;
 	std::cout << "Привет, я Очередь " << name << ", ID: " << ID << "\n";
 }
-
 
 tiQueue *tiQueueSet::get(IDTYPE ID) const
 {
@@ -76,7 +73,6 @@ IDTYPE tiQueueSet::add(tiQueue *QueuePtr)
 	std::cout << "L: " << __LINE__ << " " << __FUNCTION__ << std::endl;
 	#endif
 
-
 	if(ArrI >= maxID)
 
 	if(SegI >= SegSize)
@@ -91,9 +87,6 @@ int tiQueueSet::del(IDTYPE ID)
 	#if defined(_DEBUG) && !defined(NDEBUG)
 	std::cout << "L: " << __LINE__ << " " << __FUNCTION__ << std::endl;
 	#endif
-
-
-
 
 	return 0;
 }
@@ -120,8 +113,6 @@ tiQueueSet::tiQueueSet()
 	for(IDTYPE i = 0; i < NSegMAX; ++i)
 		SegArr[i] = nullptr;
 
-
-
 	for(IDTYPE i = 0; i < SegSize; ++i)
 		SegArr[Seg][i] = nullptr;
 
@@ -141,9 +132,6 @@ int tiQueueSet::newSeg()
 	}
 }
 
-
-
-
 int main()
 {
 	setlocale(0, "Russian");
@@ -151,13 +139,7 @@ int main()
 
 	
 
-
-
-
 	cout << "L:" << __LINE__ << "\n";
-
-
-
 
 	
 	
@@ -174,9 +156,7 @@ int main()
 	
 	cout << "L:" << __LINE__ << "\n";
 
-
 	cout << "L:" << __LINE__ << "\n";
-
 
 	cout << "L:" << __LINE__ << "\n";
 
@@ -184,15 +164,8 @@ int main()
 
 	cout << "L:" << __LINE__ << "\n";
 
-
-
 	cout << "******************\n";
-
-
-
 
 	return 0;
 }
-
-
 
