@@ -24,7 +24,7 @@ jobs:
           cd private-repo
 
           # Удаляем комментарии из C++ файлов во всех подпапках
-          find . -type f \( -name "*.cpp" -o -name "*.h" \) | while read file; do
+          find . -type f \( -name "*.cpp" -o -name "*.hpp" \) | while read file; do
             sed '/\/\//d; /\/\*/,/\*\//d' "$file" > "${file}.tmp"
             mv "${file}.tmp" "$file"
           done
