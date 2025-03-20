@@ -1,0 +1,52 @@
+name: Sync Public Repository
+
+on:
+  push:
+    branches:
+      - master  # Триггер на пуши в ветку main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Шаг 1: Клонируем приватный репозиторий
+      - name: Checkout private repo
+        uses: actions/checkout@v3
+        with:
+          repository: triksterr/TecInterface
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: private-repo
+
+      # Шаг 2: Удаляем комментарии из C++ файлов и документацию
+      - name: Remove comments and documentation
+        run: |
+          cd private-repo
+
+          # Удаляем комментарии из C++ файлов
+          find . -type f -name "*.cpp" -o -name "*.h" | while read file; do
+            sed '/\/\//d; /\/\*/,/\*\//d' "$file" > "${file}.tmp"
+            mv "${file}.tmp" "$file"
+          done
+
+          # Удаляем файлы документации
+          rm -f *.txt *.md TODO.c
+
+      # Шаг 3: Клонируем публичный репозиторий
+      - name: Checkout public repo
+        uses: actions/checkout@v3
+        with:
+          repository: triksterr/QueueInterface
+          token: ${{ secrets.PUBLIC_REPO_TOKEN }}  # Токен для доступа к публичному репозиторию
+          path: public-repo
+
+      # Шаг 4: Копируем очищенный код в публичный репозиторий
+      - name: Copy cleaned code to public repo
+        run: |
+          cp -r private-repo/* public-repo/
+          cd public-repo
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "Auto-sync from private repo"
+          git push
