@@ -3,7 +3,7 @@ name: Sync Public Repository
 on:
   push:
     branches:
-      - master  # Триггер на пуши в ветку main
+      - master  # Триггер на пуши в ветку master
 
 jobs:
   sync:
@@ -15,29 +15,29 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: triksterr/TecInterface
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}  # Используем PAT для доступа к приватному репозиторию
           path: private-repo
 
-      # Шаг 2: Удаляем комментарии из C++ файлов и документацию
-      - name: Remove comments and documentation
+      # Шаг 2: Удаляем комментарии из C++ файлов и текстовые файлы во всех подпапках
+      - name: Remove comments and text files
         run: |
           cd private-repo
 
-          # Удаляем комментарии из C++ файлов
-          find . -type f -name "*.cpp" -o -name "*.h" | while read file; do
+          # Удаляем комментарии из C++ файлов во всех подпапках
+          find . -type f \( -name "*.cpp" -o -name "*.h" \) | while read file; do
             sed '/\/\//d; /\/\*/,/\*\//d' "$file" > "${file}.tmp"
             mv "${file}.tmp" "$file"
           done
 
-          # Удаляем файлы документации
-          rm -f *.txt *.md TODO.c
+          # Удаляем все текстовые файлы во всех подпапках
+          find . -type f \( -name "*.txt" -o -name "*.md" -o -name "TODO.c" \) -delete
 
       # Шаг 3: Клонируем публичный репозиторий
       - name: Checkout public repo
         uses: actions/checkout@v3
         with:
           repository: triksterr/QueueInterface
-          token: ${{ secrets.PUBLIC_REPO_TOKEN }}  # Токен для доступа к публичному репозиторию
+          token: ${{ secrets.PUBLIC_REPO_TOKEN }}  # Используем PAT для доступа к публичному репозиторию
           path: public-repo
 
       # Шаг 4: Копируем очищенный код в публичный репозиторий
@@ -49,4 +49,4 @@ jobs:
           git config --global user.email "actions@github.com"
           git add .
           git commit -m "Auto-sync from private repo"
-          git push
+          git push origin main  # Убедитесь, что ветка указана правильно
