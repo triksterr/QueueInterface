@@ -10,42 +10,15 @@ class tiQueueSet final
 {
 public:
 	
-	
 	static tiQueueSet *getInstance();
-	
-	
-	
 	
 	tiQueue *get(IDTYPE ID);
 	
-
-	
-
-	
-	
-	
-	
 	int set(IDTYPE ID, tiQueue *QueuePtr);
-	
-	
-	
-	
-
-	
-
-	
-	
 	
 	IDTYPE add(tiQueue *QueuePtr);
 	
-
-	
-	
-	
 	int del(IDTYPE ID);
-	
-
-	
 	
 	bool isFull();
 
@@ -64,9 +37,6 @@ private:
 	~tiQueueSet() = default;
 
 	bool isSegFull(); 
-
-	
-	
 
 	IDTYPE SegSize = 256; 
 	IDTYPE NSegMAX = 256; 

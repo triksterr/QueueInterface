@@ -18,34 +18,17 @@ class tiQueueSet final
 {
 public:
 	
-	
 	static tiQueueSet *getInstance();
-
-	
-	
 	
 	tiQueue *get(IDTYPE ID) const;
-
-	
-	
 	
 	bool isExist(IDTYPE ID) const;
-
-	
-	
 	
 	IDTYPE add(tiQueue *QueuePtr);
-
-	
-	
 	
 	int del(IDTYPE ID);
-
-	
 	
 	bool isFull() const;
-
-	
 
 private:
 	
@@ -55,14 +38,8 @@ private:
 	~tiQueueSet() = default; 
 	tiQueueSet &operator=(const tiQueueSet &) = delete; 
 	tiQueueSet &operator=(tiQueueSet &&) = delete; 
-
-	
 	
 	int newSeg();
-
-	
-	
-
 	
 	const IDTYPE SegSize = SSIZE;
 	
@@ -78,18 +55,6 @@ private:
 	
 	tiQueue ***SegArr = nullptr;
 };
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
 
 #pragma warning(pop)
 

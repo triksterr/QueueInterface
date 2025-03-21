@@ -14,15 +14,11 @@ public:
 	
 	tiQueue();
 	
-	
 	tiQueue(const string &name);
 	
 	~tiQueue();
 	
-	
 	IDTYPE getID() const;
-    
-	
 	
 	tiQueue *getPtr(IDTYPE ID) const;
 	

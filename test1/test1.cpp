@@ -47,8 +47,6 @@ void tiQueue::print() const
 tiQueueSet *tiQueueSet::getInstance() 
 {
 	
-
-	
 #if defined(_DEBUG) && !defined(NDEBUG)
 	std::cout << "L: " << __LINE__ << " " << __FUNCTION__ << std::endl;
 #endif
@@ -102,16 +100,13 @@ IDTYPE tiQueueSet::add(tiQueue *QueuePtr)
 
 	if(!QueuePtr) 
 		return -1; 
-
 	
 	if(ArrI >= maxID)
 		return -2; 
-
 	
 	if(SegI >= SegSize)
 		if(!newSeg()) 
 			return -3; 
-		
 	
 	SegArr[Seg][SegI++] = QueuePtr;
 		
@@ -156,19 +151,15 @@ tiQueueSet::tiQueueSet()
 	#if defined(_DEBUG) && !defined(NDEBUG)
 	std::cout << "L: " << __LINE__ << " " << __FUNCTION__ << std::endl;
 	#endif
-
 	
 	SegArr = new tiQueue **[NSegMAX];
-
 	
 	for(IDTYPE i = 0; i < NSegMAX; ++i)
 		SegArr[i] = nullptr;
 
 	Seg = 0; 
-
 	
 	SegArr[Seg] = new tiQueue *[SegSize]; 
-
 	
 	for(IDTYPE i = 0; i < SegSize; ++i)
 		SegArr[Seg][i] = nullptr;
@@ -207,9 +198,6 @@ int main()
 	cout << "Файл: " << __FILE__ << endl;
 	#endif 
 
-	
-	
-
 	tiQueue *q, *q1; 
 
 	q = new tiQueue("Q-0"); 
@@ -221,12 +209,6 @@ int main()
 	q = new tiQueue("Q-1"); 
 
 	IDTYPE q1ID = q->getID(); 
-
-	
-
-	
-	
-	
 	
 	q1 = q->getPtr(q0ID);
 
@@ -239,8 +221,6 @@ int main()
 	cout << "L:" << __LINE__ << "\n";
 
 	q = new tiQueue("Q-2"); 
-	
-	
 	
 	cout << "L:" << __LINE__ << "\n";
 
@@ -255,17 +235,6 @@ int main()
 	q1->getPtr(2)->print(); 
 
 	cout << "L:" << __LINE__ << "\n";
-
-	
-
-	
-		
-
-	
-	
-
-	
-	
 
 	return 0;
 }
