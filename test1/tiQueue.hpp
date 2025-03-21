@@ -6,14 +6,26 @@
 
 using namespace std;
 
+#define IDTYPE unsigned int 
+
 class tiQueue
 {
 public:
+	
 	tiQueue();
+	
+	
 	tiQueue(const string &name);
+	
 	~tiQueue();
+	
+	
 	IDTYPE getID() const;
+    
+	
+	
 	tiQueue *getPtr(IDTYPE ID) const;
+	
 	void print() const;
 
 private:
@@ -21,3 +33,4 @@ private:
 	IDTYPE ID = 0;
 };
 
+#endif 
