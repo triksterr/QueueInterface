@@ -29,9 +29,9 @@ IDTYPE tiQueue::getID() const
 	return ID;
 }
 
-tiQueue *tiQueue::getPtr(IDTYPE ID) const
+tiQueue *tiQueue::getPtr(IDTYPE id) const
 {
-	return tiQueueSet::getInstance()->get(ID);
+	return tiQueueSet::getInstance()->get(id);
 }
 
 void tiQueue::print() const
@@ -39,6 +39,15 @@ void tiQueue::print() const
 	if(this == nullptr)
 		return;
 	std::cout << "Привет, я Очередь " << name << ", ID: " << ID << "\n";
+}
+
+{
+
+#if defined(_DEBUG) && !defined(NDEBUG)
+	std::cout << "L: " << __LINE__ << " " << __FUNCTION__ << std::endl;
+#endif
+
+	return &instance;
 }
 
 tiQueue *tiQueueSet::get(IDTYPE ID) const

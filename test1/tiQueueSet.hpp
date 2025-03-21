@@ -12,15 +12,7 @@
 class tiQueueSet final
 {
 public:
-	static tiQueueSet *getInstance()
-	{
-
-		#if defined(_DEBUG) && !defined(NDEBUG)
-			std::cout << "L: " << __LINE__ << " " << __FUNCTION__ << std::endl;
-		#endif
-
-		return &instance;
-	}
+	static tiQueueSet *getInstance();
 
 	tiQueue *get(IDTYPE ID) const;
 
