@@ -4,9 +4,7 @@
 
 #include <string>
 
-using namespace std;
-
-#define IDTYPE unsigned int 
+#define IDTYPE unsigned long long 
 
 class tiQueue
 {
@@ -14,7 +12,7 @@ public:
 	
 	tiQueue();
 	
-	tiQueue(const string &name);
+	tiQueue(const std::string &name);
 	
 	~tiQueue();
 	
@@ -25,7 +23,7 @@ public:
 	void print() const;
 
 private:
-	string name = "";
+	std::string name = "";
 	IDTYPE ID = 0;
 };
 

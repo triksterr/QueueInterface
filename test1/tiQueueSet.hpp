@@ -2,12 +2,6 @@
 #ifndef tiQueueSet_hpp
 #define tiQueueSet_hpp
 
-#pragma warning(push)
-#pragma warning(disable : 4996) 
-
-#include <iostream>
-#include <__msvc_ostream.hpp>
-
 #include "tiQueue.hpp"
 
 #define IDTYPE unsigned long long 
@@ -56,7 +50,5 @@ private:
 	
 	tiQueue ***SegArr = nullptr;
 };
-
-#pragma warning(pop)
 
 #endif 

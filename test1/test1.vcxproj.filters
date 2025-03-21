@@ -21,6 +21,12 @@
     <ClCompile Include="TODO.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="tiQueue.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="tiQueueSet.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Массив ссылок.txt" />
