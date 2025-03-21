@@ -8,8 +8,6 @@
 #include "tiQueueSet.hpp"
 #include "tiQueue.hpp"
 
-using namespace std;
-
 tiQueue::tiQueue(): tiQueue("Noname") {}
 	
 tiQueue::tiQueue(const string &name): name(name)
