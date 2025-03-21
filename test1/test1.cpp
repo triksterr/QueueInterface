@@ -249,6 +249,17 @@ int main()
 
 	cout << "L:" << __LINE__ << "\n";
 
+	q = new tiQueue("Q-3");
+	q = new tiQueue("Q-4");
+	q = new tiQueue("Q-5");
+	q = new tiQueue("Q-6");
+
+	q->getPtr(6)->print();
+
+	q->getPtr(3)->print();
+
+	q->getPtr(0)->print();
+
 	cout << "******************\n";
 
 	return 0;

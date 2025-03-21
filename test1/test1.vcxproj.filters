@@ -18,6 +18,9 @@
     <ClCompile Include="test1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="TODO.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Массив ссылок.txt" />
@@ -29,5 +32,9 @@
     <ClInclude Include="tiQueue.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Декоратор.md" />
+    <None Include="Ограничение типов в шаблонах C++.md" />
   </ItemGroup>
 </Project>

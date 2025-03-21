@@ -10,7 +10,8 @@
 
 #include "tiQueue.hpp"
 
-#define IDTYPE unsigned int 
+#define IDTYPE unsigned long long 
+
 #define SSIZE 2 
 #define NSEG 256 
 
