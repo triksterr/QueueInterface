@@ -34,7 +34,7 @@ tiQueue *tiQueue::getPtr(IDTYPE id) const
 
 void tiQueue::print() const
 {
-	if(this == nullptr)
+	if(!this)
 		return;
 	std::cout << "Привет, я Очередь " << name << ", ID: " << ID << "\n";
 }

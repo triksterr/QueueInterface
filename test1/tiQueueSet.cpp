@@ -1,6 +1,11 @@
 ﻿
 
 #include "tiQueueSet.hpp"
+#include "tiQueue.hpp"
+
+#include <iostream> 
+
+#include <__msvc_ostream.hpp>
 
 tiQueueSet *tiQueueSet::getInstance() 
 {
