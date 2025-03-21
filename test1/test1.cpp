@@ -236,6 +236,8 @@ int main()
 
 	cout << "L:" << __LINE__ << "\n";
 
+	cout << "******************\n";
+
 	return 0;
 }
 
