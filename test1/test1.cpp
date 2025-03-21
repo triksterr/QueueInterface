@@ -105,7 +105,7 @@ IDTYPE tiQueueSet::add(tiQueue *QueuePtr)
 		return -2; 
 	
 	if(SegI >= SegSize)
-		if(!newSeg()) 
+		if(newSeg()) 
 			return -3; 
 	
 	SegArr[Seg][SegI++] = QueuePtr;
@@ -166,6 +166,19 @@ tiQueueSet::tiQueueSet()
 
 	SegI = 0; 
 	ArrI = 0; 
+}
+
+tiQueueSet::~tiQueueSet()
+{
+	
+	#if defined(_DEBUG) && !defined(NDEBUG)
+	std::cout << "L: " << __LINE__ << " " << __FUNCTION__ << std::endl;
+	#endif
+	
+	for(IDTYPE i = 0; i <= Seg; ++i)
+		delete [] SegArr[i];
+	
+	delete [] SegArr;
 }
 
 int tiQueueSet::newSeg()

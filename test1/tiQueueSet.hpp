@@ -35,7 +35,7 @@ private:
 	tiQueueSet();
 	tiQueueSet(const tiQueueSet &) = delete; 
 	tiQueueSet(tiQueueSet &&) = delete; 
-	~tiQueueSet() = default; 
+	~tiQueueSet(); 
 	tiQueueSet &operator=(const tiQueueSet &) = delete; 
 	tiQueueSet &operator=(tiQueueSet &&) = delete; 
 	
