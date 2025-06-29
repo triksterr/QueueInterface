@@ -15,36 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test1.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\tiQueueSet\tiQueueSet.cpp">
+    <ClCompile Include="tiErr.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\tiQueueSet\TODO.c">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\tiQueue\tiQueue.cpp">
+    <ClCompile Include="TODO.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\tiQueueSet\tiQueueSet.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="..\tiQueue\tiQueue.hpp">
+    <ClInclude Include="tiErr.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Декоратор.md" />
-    <None Include="Ограничение типов в шаблонах C++.md" />
-    <None Include="ClassDiagram.cd" />
+    <None Include="Класс ошибок 1.md" />
   </ItemGroup>
   <ItemGroup>
-    <Natvis Include="NatvisFile.natvis" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\tiQueueSet\Массив ссылок.txt" />
+    <Text Include="Ошибки - функционал.txt" />
   </ItemGroup>
 </Project>

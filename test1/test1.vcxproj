@@ -131,26 +131,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="test1.cpp" />
-    <ClCompile Include="tiQueue.cpp" />
-    <ClCompile Include="tiQueueSet.cpp" />
-    <ClCompile Include="TODO.c">
+    <ClCompile Include="..\tiQueueSet\tiQueueSet.cpp" />
+    <ClCompile Include="..\tiQueueSet\TODO.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\tiQueue\tiQueue.cpp" />
+    <ClCompile Include="test1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\Массив ссылок.txt" />
+    <ClInclude Include="..\tiQueueSet\tiQueueSet.hpp" />
+    <ClInclude Include="..\tiQueue\tiQueue.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tiQueue.hpp" />
-    <ClInclude Include="tiQueueSet.hpp" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="Декоратор.md" />
     <None Include="Ограничение типов в шаблонах C++.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="NatvisFile.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\tiQueueSet\Массив ссылок.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

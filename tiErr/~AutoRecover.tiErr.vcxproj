@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{284bf530-7d59-4d4d-9c00-cd73e52718c3}</ProjectGuid>
-    <RootNamespace>TecInt</RootNamespace>
+    <ProjectGuid>{8b9c453c-ec9e-45c9-9cae-4ece5ffa2c8e}</ProjectGuid>
+    <RootNamespace>tiErr</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,34 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-    <None Include="DOC_prj\README.md" />
-    <None Include="DOC_prj\Агрегация и композиция.md" />
-    <None Include="DOC_prj\Асинхронный доступ.md" />
-    <None Include="DOC_prj\Вариант решения.md" />
-    <None Include="DOC_prj\Ограничить шаблон целочисленными типами.md" />
-    <None Include="DOC_prj\Организация мандатной защиты доступа к объекту.md" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DOC_prj\TODO.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="tiQueueInterface\tiInterface.cpp" />
-    <ClCompile Include="tiQueueSet\tiQueueSet.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="DOC_prj\Мандатная защита.txt" />
-    <Text Include="DOC_prj\Проект.txt" />
-    <Text Include="DOC_prj\Промпт.txt" />
-    <Text Include="Очередь.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="tiQueueInterface\tiInterface.hpp" />
-    <ClInclude Include="tiQueueSet\tiQueueSet.hpp" />
-    <ClInclude Include="tiTypes.hpp" />
+    <ClInclude Include="tiErr.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

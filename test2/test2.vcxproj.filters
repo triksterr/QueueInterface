@@ -15,39 +15,30 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DOC_prj\README.md" />
-    <None Include="DOC_prj\Агрегация и композиция.md" />
-    <None Include="DOC_prj\Асинхронный доступ.md" />
-    <None Include="DOC_prj\Вариант решения.md" />
-    <None Include="DOC_prj\Ограничить шаблон целочисленными типами.md" />
-    <None Include="DOC_prj\Организация мандатной защиты доступа к объекту.md" />
-    <None Include="ClassDiagram.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="DOC_prj\TODO.c">
+    <ClCompile Include="test2.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="tiQueueInterface\tiInterface.cpp">
+    <ClCompile Include="..\tiQueue\tiQueue.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="tiQueueSet\tiQueueSet.cpp">
+    <ClCompile Include="..\tiQueue\TODO.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tiQueueSet\tiQueueSet.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="DOC_prj\Мандатная защита.txt" />
-    <Text Include="DOC_prj\Проект.txt" />
-    <Text Include="DOC_prj\Промпт.txt" />
-    <Text Include="Очередь.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="tiQueueInterface\tiInterface.hpp">
+    <ClInclude Include="..\tiQueue\tiQueue.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="tiQueueSet\tiQueueSet.hpp">
+    <ClInclude Include="..\tiQueue\tiQueueBase.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="tiTypes.hpp">
+    <ClInclude Include="..\tiQueueSet\tiQueueSet.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tiTypes.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

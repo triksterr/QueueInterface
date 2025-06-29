@@ -5,8 +5,8 @@
 
 #include <__msvc_ostream.hpp>
 
-#include "tiQueueSet.hpp"
-#include "tiQueue.hpp"
+#include "..\tiTypes.hpp"
+#include "..\tiQueue\tiQueue.hpp"
 
 using namespace std;
 
@@ -17,15 +17,15 @@ int main()
 	cout << "Файл: " << __FILE__ << endl;
 	#endif 
 
-	tiQueue *q, *q1; 
+	tiQueue<int> *q, *q1; 
 
-	q = new tiQueue("Q-0"); 
+	q = new tiQueue<int>("Q-0"); 
 
 	IDTYPE q0ID = q->getID(); 
 
 	cout << "L:" << __LINE__ << "\n";
 
-	q = new tiQueue("Q-1"); 
+	q = new tiQueue<int>("Q-1"); 
 
 	IDTYPE q1ID = q->getID(); 
 	
@@ -41,7 +41,7 @@ int main()
 
 	cout << "L:" << __LINE__ << "\n";
 
-	q = new tiQueue("Q-2"); 
+	q = new tiQueue<int>("Q-2"); 
 	
 	cout << "L:" << __LINE__ << "\n";
 
