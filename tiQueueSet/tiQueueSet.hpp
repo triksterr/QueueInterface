@@ -2,12 +2,15 @@
 #ifndef tiQueueSet_hpp
 #define tiQueueSet_hpp
 
-#include "..\tiQueue\tiQueueBase.hpp"
 #include "..\tiTypes.hpp"
 
 class tiQueueSet final
 {
-public:
+	friend class tiQueueBase; 
+	template<typename T>
+	friend class tiQueue; 
+
+private:
 	
 	static tiQueueSet *getInstance();
 	
@@ -18,8 +21,6 @@ public:
 	IDTYPE add(tiQueueBase *QueuePtr);
 	
 	int del(IDTYPE ID);
-
-private:
 	
 	bool isFull() const;
 
@@ -47,6 +48,7 @@ private:
 	IDTYPE ArrI = 0;
 	
 	tiQueueBase ***SegArr = nullptr;
+	
 };
 
 #endif 

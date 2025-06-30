@@ -87,7 +87,7 @@ int tiQueueSet::del(IDTYPE ID)
 
 	IDTYPE segInd = ID / SegSize; 
 	IDTYPE index = ID % SegSize; 
-	
+
 	SegArr[segInd][index] = nullptr; 
 
 	return 0;

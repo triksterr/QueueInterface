@@ -8,23 +8,29 @@
 int main()
 {
 	setlocale(LC_ALL, "Russian");
+
+	std::cout << "Test 2\n\n";
 	
-	tiQueue<int> queue1; 
+	tiQueue<int> q1(10); 
 
-	queue1.setDescription("Очередь 1");
+	q1.print();
 
-	queue1.print();
+	q1.printData();
 	
-	tiQueue<std::string> *queue2 = new tiQueue<std::string>(256); 
+	q1.push(127); 
+	q1.printData();
+	q1.push(2); q1.push(3); q1.push(4); q1.push(5); q1.push(6); q1.push(7); q1.push(8); q1.push(9);
+	q1.printData();
+	q1.push(1); 
+	q1.printData();
 
-	queue2->print();
+	return 0;
+	
+	tiQueue<std::string> *q2 = new tiQueue<std::string>(256); 
 
-	tiQueue<int> q3; 
-	q3.setDescription("Очередь 3");
-	q3.print();
-	q3.setDescription(); 
+	q2->print();
 
-	delete queue2;
+	delete q2;
 
 	return 0;
 }

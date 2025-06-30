@@ -10,6 +10,19 @@
 #include <iostream> 
 #include <typeinfo> 
 
+struct tiQueueInfo
+{	
+	IDTYPE ID; 
+	tiQueueBase *QueuePtr; 
+	std::string description; 
+	std::string type; 
+	SIZETYPE size; 
+	SIZETYPE input; 
+	SIZETYPE output; 
+	bool isEmpty; 
+	bool isFull; 
+};
+
 template <typename T>
 class tiQueue : public tiQueueBase
 {
@@ -24,9 +37,10 @@ public:
 		input(0),
 		output(0),
 		isEmptyF(true), 
+		isFullF(false), 
 		description("")
 	{
-		ID = tiQueueSet::getInstance()->add(this);
+		ID = tiQueueSet::getInstance()->add(this); 
 		queue = new T[size]; 
 		
 		std::cout << "Очередь " << description << ", ID: " << ID << " создана!\n";
@@ -34,8 +48,8 @@ public:
 	
 	~tiQueue()
 	{
-		delete[] queue; 
 		tiQueueSet::getInstance()->del(ID); 
+		delete[] queue; 
 		
 		std::cout << "Очередь " << description << ", ID: " << ID << " уничтожена!\n";
 	}
@@ -60,6 +74,14 @@ public:
 		return size;
 	}
 	
+	void setSize(SIZETYPE size)
+	{
+
+		this->size = size;
+		
+		std::cout << "Размер очереди " << description << " изменен на " << size << "\n";
+	}
+	
 	void push(const T data) 
 	{
 		queue[input] = data; 
@@ -74,7 +96,13 @@ public:
 	T pop() 
 	{
 		
-		std::cout << "Данные " << queue[output] << " сняты из Очереди " << description << ", index: " << output << "\n";
+		std::cout << "Данные " << queue[output] << " сняты из Очереди ID " << ID << ", index: " << output << "\n";
+
+		if(isEmptyF == true)
+			;
+
+		if(isEmptyF == false && input == output) 
+			;
 
 		T data = queue[output]; 
 		output = (output + 1) % size; 
@@ -85,9 +113,10 @@ public:
 	
 	T peek() const 
 	{
-		return queue[output]; 
 		
-		std::cout << "Данные " << queue[output] << " считаны из Очереди " << description << ", index: " << output << "\n";
+		std::cout << "Данные " << queue[output] << " считаны из Очереди " << description << ", index: " << output << "\n";		
+		
+		return queue[output]; 
 	}
 	
 	void setDescription(const std::string description = "") 
@@ -95,7 +124,17 @@ public:
 		this->description = description;
 	}
 	
-	tiQueue *getPtr(const IDTYPE ID) const
+	std::string getDescription() const
+	{
+		return description;
+	}
+	
+	std::string getType() const
+	{
+		return typeid(T).name();
+	}
+	
+	static tiQueue *getPtr(const IDTYPE ID)
 	{
 		return tiQueueSet::getInstance()->get(ID);
 	}
@@ -106,7 +145,17 @@ private:
 	{
 		if(!this)
 			return;
-		std::cout << "Привет, я Очередь " << description << ", ID: " << ID << ", size: " << size << ", type: " << typeid(T).name() << "\n";
+		std::cout << "Привет, я Очередь ID: " << ID << ", size: " << size << ", type: " << typeid(T).name() << "\n";
+	}
+	
+	void printData() const
+	{
+		std::cout << "Данные Очереди ID " << ID << " :";
+		
+		for(SIZETYPE i = 0; i < size; ++i) 
+			std::cout << " " << queue[i];
+
+		std::cout << "\n";
 	}
 
 	T *queue = nullptr; 
