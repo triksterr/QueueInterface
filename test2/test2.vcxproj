@@ -124,7 +124,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\tiQueueSet\tiQueueSet.cpp" />
-    <ClCompile Include="..\tiQueue\tiQueue.cpp" />
     <ClCompile Include="..\tiQueue\TODO.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>

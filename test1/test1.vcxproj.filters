@@ -24,9 +24,6 @@
     <ClCompile Include="..\tiQueueSet\TODO.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\tiQueue\tiQueue.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\tiQueueSet\tiQueueSet.hpp">

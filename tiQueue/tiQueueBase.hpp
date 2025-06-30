@@ -12,9 +12,9 @@ class tiQueueBase
 {
 public:
 	
-	~tiQueueBase() = default;
-	
+	virtual ~tiQueueBase() = default;
+	virtual IDTYPE getID() const = 0;
 private:
-
+	
 };
 #endif 
