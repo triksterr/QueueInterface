@@ -15,26 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="tiErr.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="TODO.c">
+    <ClCompile Include="Injection.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tiErr.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Класс ошибок 1.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Ошибки - функционал.txt" />
-    <Text Include="err.txt" />
+    <None Include="..\TecInt\DOC_prj\Добавление функционала\дополнительный функционал 1.md" />
+    <None Include="..\TecInt\DOC_prj\Добавление функционала\дополнительный функционал 2.md" />
+    <None Include="..\TecInt\DOC_prj\Добавление функционала\дополнительный функционал 3.md" />
   </ItemGroup>
 </Project>

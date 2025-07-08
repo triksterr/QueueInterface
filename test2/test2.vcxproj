@@ -130,10 +130,18 @@
     <ClCompile Include="test2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\idbg.hpp" />
     <ClInclude Include="..\tiQueueSet\tiQueueSet.hpp" />
     <ClInclude Include="..\tiQueue\tiQueue.hpp" />
     <ClInclude Include="..\tiQueue\tiQueueBase.hpp" />
     <ClInclude Include="..\tiTypes.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\tiQueue\Array.txt" />
+    <Text Include="..\Классы.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\tiQueue\Metods.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

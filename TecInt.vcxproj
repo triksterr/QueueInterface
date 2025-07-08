@@ -149,7 +149,9 @@
     <Text Include="DOC_prj\Мандатная защита.txt" />
     <Text Include="DOC_prj\Проект.txt" />
     <Text Include="DOC_prj\Промпт.txt" />
+    <Text Include="Классы.txt" />
     <Text Include="Очередь.txt" />
+    <Text Include="Права.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tiQueueInterface\tiInterface.hpp" />

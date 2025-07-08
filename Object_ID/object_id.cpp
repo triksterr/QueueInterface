@@ -1,6 +1,4 @@
-#include "object_id.hpp"
-Базовый класс для генерации уникальных идентификаторов объектов для производных классов
-Каждый объект содержит свой личный ID: unsigned long int от 0 до + 4 294 967 295
+п»ї#include "object_id.hpp"
 
 object_id::object_id(): oID(counter++) {}
 

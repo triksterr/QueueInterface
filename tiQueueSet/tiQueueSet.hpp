@@ -22,6 +22,11 @@ private:
 	
 	int del(IDTYPE ID);
 	
+	IDTYPE getCount() const 
+	{
+		return queueCount; 
+	}
+	
 	bool isFull() const;
 
 	tiQueueSet(); 
@@ -30,8 +35,6 @@ private:
 	~tiQueueSet(); 
 	tiQueueSet &operator=(const tiQueueSet &) = delete; 
 	tiQueueSet &operator=(tiQueueSet &&) = delete; 
-	
-	bool isSegFull(); 
 	
 	int newSeg();
 	
@@ -48,6 +51,8 @@ private:
 	IDTYPE ArrI = 0;
 	
 	tiQueueBase ***SegArr = nullptr;
+	
+	IDTYPE queueCount = 0;
 	
 };
 

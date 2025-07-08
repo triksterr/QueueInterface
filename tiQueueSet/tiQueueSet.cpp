@@ -71,6 +71,7 @@ IDTYPE tiQueueSet::add(tiQueueBase *QueuePtr)
 			return -3; 
 	
 	SegArr[Seg][SegI++] = QueuePtr;
+	queueCount++; 
 
 	return ArrI++;
 }
@@ -89,6 +90,7 @@ int tiQueueSet::del(IDTYPE ID)
 	IDTYPE index = ID % SegSize; 
 
 	SegArr[segInd][index] = nullptr; 
+	queueCount--; 
 
 	return 0;
 }
@@ -112,21 +114,22 @@ tiQueueSet::tiQueueSet()
 #if defined(_DEBUG) && !defined(NDEBUG)
 	std::cout << "L: " << __LINE__ << " " << __FUNCTION__ << std::endl;
 #endif
-
+	
 	SegArr = new tiQueueBase * *[NSegMAX];
 	
-	for(IDTYPE i = 0; i < NSegMAX; ++i)
+	for(IDTYPE i = 0; i < NSegMAX; i++)
 		SegArr[i] = nullptr;
 
 	Seg = 0; 
 	
 	SegArr[Seg] = new tiQueueBase * [SegSize]; 
 	
-	for(IDTYPE i = 0; i < SegSize; ++i)
+	for(IDTYPE i = 0; i < SegSize; i++)
 		SegArr[Seg][i] = nullptr;
 
 	SegI = 0; 
 	ArrI = 0; 
+	queueCount = 0; 
 }
 
 tiQueueSet::~tiQueueSet()
@@ -136,7 +139,7 @@ tiQueueSet::~tiQueueSet()
 	std::cout << "L: " << __LINE__ << " " << __FUNCTION__ << std::endl;
 #endif
 
-	for(IDTYPE i = 0; i <= Seg; ++i)
+	for(IDTYPE i = 0; i <= Seg; i++)
 		delete[] SegArr[i];
 	
 	delete[] SegArr;
@@ -158,7 +161,7 @@ int tiQueueSet::newSeg()
 	else
 	{
 		SegArr[Seg] = new tiQueueBase * [SegSize]; 
-		for(IDTYPE i = 0; i < SegSize; ++i) 
+		for(IDTYPE i = 0; i < SegSize; i++) 
 			SegArr[Seg][i] = nullptr;
 		SegI = 0; 
 		return 0; 
