@@ -22,6 +22,7 @@
     <None Include="DOC_prj\Ограничить шаблон целочисленными типами.md" />
     <None Include="DOC_prj\Организация мандатной защиты доступа к объекту.md" />
     <None Include="ClassDiagram.cd" />
+    <None Include=".github\workflows\sync-public-repo.yml" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DOC_prj\TODO.c">

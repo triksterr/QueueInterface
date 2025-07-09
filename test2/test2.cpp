@@ -33,7 +33,7 @@ int main()
 	std::cout << q1.pop() << "\n";
 	std::cout << q1.pop() << "\n";
 
-	return 0; 
+	return 1; 
 	
 	tiQueue<std::string> *q2 = new tiQueue<std::string>(26); 
 

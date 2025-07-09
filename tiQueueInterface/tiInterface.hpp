@@ -16,7 +16,7 @@ public:
 	
 	virtual bool isFull() = 0;
 	
-	virtual ~tiQueue() {}
+	virtual ~tiQueue() {} 
 };
 
 #endif 

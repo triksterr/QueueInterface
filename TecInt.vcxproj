@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include=".github\workflows\sync-public-repo.yml" />
     <None Include="ClassDiagram.cd" />
     <None Include="DOC_prj\README.md" />
     <None Include="DOC_prj\Агрегация и композиция.md" />
